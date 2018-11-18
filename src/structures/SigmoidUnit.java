@@ -1,10 +1,12 @@
 package structures;
 
+import cmath.MFunctions;
 import cmath.RandomGen;
 
 public class SigmoidUnit {
 
     private double[] weights;
+    private double output;
 
     public SigmoidUnit(int inputs) {
         this.weights = new double[inputs];
@@ -12,24 +14,24 @@ public class SigmoidUnit {
 
     public void initWeights(double init) {
         for (int i = 0; i < this.weights.length; i++) {
-            this.weights[i] = RandomGen.randomRange(-init, init);
+            this.weights[i] = RandomGen.randomRange(-init,init);
         }
     }
 
-    public double output(double[] inputs) {
+    public void produceOutput(double[] inputs) {
         double result = 0;
         for (int i = 0; i < inputs.length; i++) {
             result += inputs[i] * this.weights[i];
         }
-        return result;
+        this.output = MFunctions.sigmoid(result);
     }
 
-    public static double sigmoid(double x) {
-        return 1/(1 + Math.pow(Math.E,-x));
+    public double getOutput() {
+        return this.output;
     }
 
-    public static double dsigmoid(double x) {
-        return sigmoid(x) * (1 - sigmoid(x));
+    public double[] getWeights() {
+        return this.weights;
     }
 
 }
