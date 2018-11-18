@@ -66,4 +66,19 @@ public class NeuralNetwork {
         return Math.sqrt(6)/Math.sqrt(nIn + nOut);
     }
 
+    public List<SigmoidUnit[]> getLayers() {
+        return this.layers;
+    }
+
+    public void test(double[][] data, double[][] targets) {
+        for (int i = 0; i < data.length; i++) {
+            double[] input = data[i];
+            double[] target = targets[i];
+            double[] output = this.feedForward(input);
+            System.out.println("Input  -> " + ArrayFunctions.arrToStr(input));
+            System.out.println("Target -> " + ArrayFunctions.arrToStr(target));
+            System.out.println("Output -> " + ArrayFunctions.arrToStr(output) + "\n");
+        }
+    }
+
 }

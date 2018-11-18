@@ -7,6 +7,7 @@ public class SigmoidUnit {
 
     private double[] weights;
     private double output;
+    private double errorTerm;
 
     public SigmoidUnit(int inputs) {
         this.weights = new double[inputs];
@@ -24,6 +25,14 @@ public class SigmoidUnit {
             result += inputs[i] * this.weights[i];
         }
         this.output = MFunctions.sigmoid(result);
+    }
+
+    public double getErrorTerm() {
+        return this.errorTerm;
+    }
+
+    public void setErrorTerm(double errorTerm) {
+        this.errorTerm = errorTerm;
     }
 
     public double getOutput() {

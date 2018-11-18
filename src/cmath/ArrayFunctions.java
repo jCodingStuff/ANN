@@ -7,8 +7,17 @@ public class ArrayFunctions {
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
-        arr[arr.length-1] = value;
+        newArr[newArr.length-1] = value;
         return newArr;
+    }
+
+    public static String arrToStr(double[] arr) {
+        String result = "[";
+        for (int i = 0; i < arr.length; i++) {
+            result += arr[i];
+            if (i != arr.length-1) result += ", ";
+        }
+        return result + "]";
     }
 
 }
