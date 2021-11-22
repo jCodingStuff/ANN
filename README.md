@@ -1,7 +1,6 @@
-# ANN
-Artificial Neural Networks
+# Artificial Neural Networks in Java
 
-This repository stores a data structure for Artificial Neural Networks (feed-forward and acyclic).  
+This repository contains a data structure for Artificial Neural Networks (feed-forward and acyclic).  
 It also has a pure Backpropagation algorithm that can be applied.  
 The ANN can be created using an array to describe the structure. For example, [2, 3, 4, 2] means:
   - 2 nodes in the input layer
